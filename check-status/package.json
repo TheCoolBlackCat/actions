@@ -1,14 +1,19 @@
 {
   "name": "check-status",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "check-status action",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
+  "scripts": {
+    "build": "esbuild checkStatus.ts --platform=node --bundle --minify --outfile=dist/index.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
   "devDependencies": {
     "@types/node": "^24.8.1",
-    "node-fetch": "^3.3.2",
     "tsx": "^4.20.6"
   },
   "volta": {
