@@ -3,10 +3,10 @@
   "version": "2.0.0",
   "description": "check-status action",
   "author": "Timothy Clark",
-  "type": "module",
   "private": true,
   "scripts": {
-    "build": "esbuild checkStatus.ts --platform=node --bundle --minify --outfile=dist/index.js"
+    "build": "esbuild checkStatus.ts --platform=node --format=cjs --bundle --minify --target=node20 --outfile=dist/index.js",
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@actions/core": "^1.11.1"

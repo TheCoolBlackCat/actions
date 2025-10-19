@@ -2,10 +2,8 @@
 
 import { getInput } from "@actions/core";
 
-const siteUrlInput = getInput("site-url", { required: true, trimWhitespace: true }) ?? process.env.SITE_URL;
-const SITE_URL = siteUrlInput || "";
-const wordpressInput = getInput("wordpress", { required: false, trimWhitespace: true }) ?? process.env.IS_WORDPRESS;
-const IS_WORDPRESS = wordpressInput.toLowerCase() === "true";
+const SITE_URL = process.env.SITE_URL ?? getInput("site-url", { required: true, trimWhitespace: true });
+const IS_WORDPRESS = (process.env.IS_WORDPRESS ?? getInput("wordpress", { required: false, trimWhitespace: true })).toLowerCase() === "true";
 const MAX_RETRIES = 3;
 const INITIAL_DELAY_MS = 5000;
 const USER_AGENT = "CheckStatus-Monitor/2.0";
