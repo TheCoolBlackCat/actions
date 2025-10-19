@@ -1,7 +1,11 @@
 #!/usr/bin/env -S npx tsx
 
-const SITE_URL = process.env.SITE_URL ?? "";
-const IS_WORDPRESS = process.env.IS_WORDPRESS === "true";
+import { getInput } from "@actions/core";
+
+const siteUrlInput = getInput("site-url", { required: true, trimWhitespace: true }) ?? process.env.SITE_URL;
+const SITE_URL = siteUrlInput || "";
+const wordpressInput = getInput("wordpress", { required: false, trimWhitespace: true }) ?? process.env.IS_WORDPRESS;
+const IS_WORDPRESS = wordpressInput.toLowerCase() === "true";
 const MAX_RETRIES = 3;
 const INITIAL_DELAY_MS = 5000;
 const USER_AGENT = "CheckStatus-Monitor/2.0";
@@ -13,7 +17,7 @@ const wordpressErrors = [
 ];
 
 if (!SITE_URL) {
-  console.error("❌ SITE_URL not set");
+  core.setFailed("SITE_URL not set");
   process.exit(1);
 }
 
@@ -70,5 +74,6 @@ const checkStatus = async () => {
 }
 
 checkStatus().catch(err => {
-  console.error(`❌ ${err?.message}`)
+  const message = err && typeof err === "object" && "message" in err ? String(err.message) : String(err);
+  core.setFailed(message);
 })

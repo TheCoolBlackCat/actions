@@ -16,8 +16,6 @@ inputs:
 
 
 runs:
+  name: "Check Status"
   using: "node20"
   main: "dist/index.js"
-  env:
-    SITE_URL: ${{ inputs.site-url }}
-    IS_WORDPRESS: ${{ inputs.wordpress }}

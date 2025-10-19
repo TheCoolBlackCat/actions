@@ -8,6 +8,9 @@
   "scripts": {
     "build": "esbuild checkStatus.ts --platform=node --bundle --minify --outfile=dist/index.js"
   },
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  },
   "devDependencies": {
     "@types/node": "^24.8.1",
     "tsx": "^4.20.6"
