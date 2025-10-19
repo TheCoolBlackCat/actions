@@ -1,0 +1,34 @@
+# Node dependencies and build output
+node_modules/
+dist/
+lib/
+build/
+.cache/
+.parcel-cache/
+
+# Logs and diagnostics
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+
+# Editor directories and OS files
+.DS_Store
+.idea/
+.vscode/
+
+# GitHub Actions artifacts
+actions-runner/_work/
+actions-runner/_diag/
