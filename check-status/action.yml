@@ -21,8 +21,9 @@ runs:
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
-        node-version: '22'
+        node-version: '22.x'
         cache: 'npm'
+        cache-dependency-path: ${{ github.action_path }}/package-lock.json
 
     - name: Install dependencies
       run: npm ci --prefer-offline --no-audit --no-fund --progress=false
