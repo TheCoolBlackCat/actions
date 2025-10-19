@@ -9,7 +9,7 @@ inputs:
   site-url:
     description: "The site URL to check"
     required: true
-  is-wordpress:
+  wordpress:
     description: "Whether to check for WordPress-specific errors"
     required: false
     default: false
@@ -33,5 +33,5 @@ runs:
     - name: Check if website is up
       env:
         SITE_URL: ${{ inputs.site-url }}
-        IS_WORDPRESS: ${{ inputs.is-wordpress }}
+        IS_WORDPRESS: ${{ inputs.wordpress }}
       run: .github/actions/check-status/checkStatus.ts
