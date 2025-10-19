@@ -1,16 +1,12 @@
 {
-  "name": "check-status",
+  "name": "@thecoolblackcat/check-status",
   "version": "2.0.0",
   "description": "check-status action",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Timothy Clark",
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "esbuild checkStatus.ts --platform=node --bundle --minify --outfile=dist/index.js"
-  },
-  "dependencies": {
-    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@types/node": "^24.8.1",

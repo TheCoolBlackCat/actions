@@ -1,7 +1,5 @@
 #!/usr/bin/env -S npx tsx
 
-import fetch, { Response } from "node-fetch";
-
 const SITE_URL = process.env.SITE_URL ?? "";
 const IS_WORDPRESS = process.env.IS_WORDPRESS === "true";
 const MAX_RETRIES = 3;
@@ -24,7 +22,7 @@ async function sleep(ms: number) {
 }
 
 function isValidError(err: unknown): err is { message: string } {
-  return (err && typeof err === 'object' && ('message' in err) && err.message && typeof err.message === 'string')
+  return (!!err && typeof err === 'object' && ('message' in err) && err.message && typeof err.message === 'string')
 }
 
 async function fetchWithRetry(url: string): Promise<Response> {
