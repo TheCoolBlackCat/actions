@@ -1,18 +1,19 @@
 {
-  "name": "checkstatus",
+  "name": "check-status",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "check-status action",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@types/node": "^24.8.1",
     "node-fetch": "^3.3.2",
     "tsx": "^4.20.6"
-  }
+  },
+  "volta": {
+    "node": "22.20.0",
+    "npm": "11.6.2"
+  },
+  "packageManager": "npm@11.6.2"
 }
