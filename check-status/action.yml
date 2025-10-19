@@ -16,6 +16,5 @@ inputs:
 
 
 runs:
-  name: "Check Status"
   using: "node20"
   main: "dist/index.js"
