@@ -4,7 +4,7 @@ const SITE_URL = process.env.SITE_URL ?? "";
 const IS_WORDPRESS = process.env.IS_WORDPRESS === "true";
 const MAX_RETRIES = 3;
 const INITIAL_DELAY_MS = 5000;
-const USER_AGENT = "CheckStatus-Monitor/1.0";
+const USER_AGENT = "CheckStatus-Monitor/2.0";
 
 const wordpressErrors = [
   { pattern: /error establishing a database connection/i, message: "Database connection error" },
